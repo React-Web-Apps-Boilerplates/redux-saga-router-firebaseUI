@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import DemoActions from "./../redux/demo/actions";
 
-import logo from "../logo.svg";
+import logo from "../assets/logo.svg";
 import "./App.css";
 
 const { incrementCounter } = DemoActions;
