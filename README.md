@@ -1,2 +1,5 @@
-# React-Redux-Saga-BoilerPlate
-Boiler plate for a react project with redux &amp; saga configured
+# React-Redux-Saga-Router-BoilerPlate
+Boiler plate for a react project with following configurations:
+  - redux 
+  - saga
+  - router
