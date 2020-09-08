@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 
 const GlobalStyles = createGlobalStyle`
   body {
