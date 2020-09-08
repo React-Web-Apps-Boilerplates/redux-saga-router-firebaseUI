@@ -21,6 +21,7 @@ class App extends Component {
 
     render = () => {
         console.log(this.props.count);
+        console.log(this.props)
         return (
             <div className="App">
                 <header className="App-header">

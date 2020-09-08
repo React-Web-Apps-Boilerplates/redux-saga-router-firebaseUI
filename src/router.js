@@ -24,6 +24,7 @@ const RestrictedRoute = ({ component: Component, isLoggedIn, ...rest }) => (
         }
     />
 );
+
 const PublicRoutes = ({ history, isLoggedIn }) => {
     return (
         <ConnectedRouter history={history}>
@@ -32,13 +33,9 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
                 <Route
                     exact
                     path={"/login"}
-                    component={import("./containers/App/App")}
-                />
-                <Route
-                    exact
-                    path={"/"}
                     component={App}
                 />
+                <Route exact path={"/"} component={App} />
 
                 {/* Restricted Routes */}
                 <RestrictedRoute
@@ -52,5 +49,5 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
 };
 
 export default connect((state) => ({
-    isLoggedIn: state.Auth.idToken !== null,
+    isLoggedIn: state && state.Auth && state.Auth.idToken !== null,
 }))(PublicRoutes);

@@ -9,11 +9,11 @@ import GlobalStyles from "./styles/globalStyle";
 
 const DashApp = () => (
     <ThemeProvider theme={themes[themeConfig.theme]}>
-        <GlobalStyles>
+         {/* <GlobalStyles> */}
             <Provider store={store}>
                 <PublicRoutes history={history} />
             </Provider>
-        </GlobalStyles>
+         {/* </GlobalStyles> */}
     </ThemeProvider>
 );
 
