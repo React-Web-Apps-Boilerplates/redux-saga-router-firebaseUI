@@ -3,6 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import { ConnectedRouter } from "connected-react-router";
 import { connect } from "react-redux";
 import App from "./containers/App/App";
+import LoginScreen from "./containers/Login"
 
 /* Restricted Route (Forward to login Page) 
     - Uses the prop value: "isLoggedIn" to check
@@ -33,7 +34,7 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
                 <Route
                     exact
                     path={"/login"}
-                    component={App}
+                    component={LoginScreen}
                 />
                 <Route exact path={"/"} component={App} />
 
