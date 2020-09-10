@@ -17,6 +17,15 @@ class App extends Component {
             firebase.auth.TwitterAuthProvider.PROVIDER_ID,
             firebase.auth.GithubAuthProvider.PROVIDER_ID,
             firebase.auth.EmailAuthProvider.PROVIDER_ID,
+            {
+                provider: firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+                recaptchaParameters: {
+                    type: "image", // 'image or audio'
+                    size: "normal", // 'normal or invisible' or 'compact'
+                    badge: "bottomleft", // 'bottomLeft' or 'bottomright' or 'inline' applies to invisible.
+                },
+                defaultCountry: "IN",
+            },
         ],
         callbacks: {
             signInSuccess: () => false,
@@ -26,13 +35,13 @@ class App extends Component {
     componentDidMount = () => {
         firebase.auth().onAuthStateChanged((user) => {
             this.setState({ isSignedIn: !!user });
-            console.log("user", user);
+            console.log("user", user, firebase.auth().currentUser);
         });
     };
 
     render() {
         return (
-            <div >
+            <div>
                 {this.state.isSignedIn ? (
                     <span>
                         <div>Signed In!</div>
