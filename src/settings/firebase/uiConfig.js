@@ -1,6 +1,7 @@
-// Configurations for firebaseui
+/* *** Configurations for firebaseui *** */
 
 import firebase from "firebase";
+import { signInSuccessWithAuthResult } from "../../utility/users";
 
 export const uiConfig = {
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
@@ -23,12 +24,7 @@ export const uiConfig = {
     ],
     signInSuccessUrl: "/",
     callbacks: {
-        signInSuccessWithAuthResult: function (authResult, redirectUrl) {
-            /* User successfully signed in.
-             Return true to redirect automatically */
-            console.log("SIGN IN SUCCESS", authResult, redirectUrl);
-            return false;
-        },
+        signInSuccessWithAuthResult,
     },
     // Terms of service url.
     tosUrl: "<your-tos-url>",
