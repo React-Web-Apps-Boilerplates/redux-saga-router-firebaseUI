@@ -2,28 +2,30 @@ import { all, takeLatest, put } from "redux-saga/effects";
 
 import actions from "./actions";
 
-/////////////// USE SAGA FOR API CALLS ONLY /////////////
 
 function* saveNewUser(params) {
     try {
-        let { payload } = params;
+        let { payload } = params.payload;
 
         // Perform API Call -> Put data to reducer
 
         yield put({
-            type: actions.INCREMENT_COUNTER_REDUCER,
+            type: actions.SAVE_NEW_USER_REDUCER,
             payload: {
                 success: true,
-                ...payload,
+                status: "success",
+                message: "New user created"
             },
         });
     } catch (error) {
         console.log(error);
 
         yield put({
-            type: actions.INCREMENT_COUNTER_REDUCER,
+            type: actions.SAVE_NEW_USER_REDUCER,
             payload: {
                 success: false,
+                status: "error",
+                message: "Failed to create new user"
             },
         });
     }

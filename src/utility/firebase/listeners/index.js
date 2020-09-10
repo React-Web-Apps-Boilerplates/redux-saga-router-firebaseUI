@@ -1,6 +1,6 @@
 /* **** LISTENERS **** */
 
-import { firebaseAuth } from "..";
+import { firebaseAuth } from "../initialize";
 
 export const addFirebaseListeners = () => {
     /* onAuthStateChanged listener is triggered on :
