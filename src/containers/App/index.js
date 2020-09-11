@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { signOut, getCurrentUser } from "../../utility/firebase";
+import { signOut } from "../../utility/firebase";
 
 class App extends Component {
     render() {

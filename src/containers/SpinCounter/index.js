@@ -4,16 +4,18 @@ import DemoActions from "../../redux/demo/actions";
 
 import logo from "../../images/logo.svg";
 import "./App.css";
+import { history } from "../../redux/store";
 
 const { incrementCounter } = DemoActions;
 
-class App extends Component {
+class SpinCounter extends Component {
     constructor(props) {
         super(props);
         this.state = {};
     }
 
-    componentDidUpdate = (prevProps, prevState) => {};
+    componentDidUpdate = (prevProps, prevState) => {
+    };
 
     onLogoClick = () => {
         this.props.incrementCounter();
@@ -43,4 +45,4 @@ function mapStateToProps(state) {
 }
 export default connect(mapStateToProps, {
     incrementCounter,
-})(App);
+})(SpinCounter);
