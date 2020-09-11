@@ -1,5 +1,8 @@
-import { history } from "../../../redux/store";
+import { history , store} from "../../../redux/store";
 import { handleNewUser } from "../signUp";
+import signInActions from "../../../redux/signIn/actions";
+
+const {signIn} = signInActions
 
 /* Browser won't be refreshed if react router is used for redirect */
 const redirectUsingReactRouter = () => {
@@ -13,4 +16,9 @@ export const signInSuccessWithAuthResult = (authResult) => {
     handleNewUser(authResult);
     redirectUsingReactRouter();
     return false;
+};
+
+/* Save the user / required data of user on sign in */
+export const onSignIn = (user) => {
+    store.dispatch(signIn(user))
 };

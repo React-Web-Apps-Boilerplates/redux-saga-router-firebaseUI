@@ -11,7 +11,7 @@ function* incrementCounter(params) {
         // Perform API Call -> Put data to reducer
 
         yield put({
-            type: actions.INCREMENT_COUNTER_REDUCER,
+            type: actions.INCREMENT_COUNTER,
             payload: {
                 success: true,
                 ...payload,
@@ -21,7 +21,7 @@ function* incrementCounter(params) {
         console.log(error);
 
         yield put({
-            type: actions.INCREMENT_COUNTER_REDUCER,
+            type: actions.INCREMENT_COUNTER,
             payload: {
                 success: false,
             },
@@ -30,5 +30,5 @@ function* incrementCounter(params) {
 }
 
 export default function* rootSaga() {
-    yield all([takeLatest(actions.INCREMENT_COUNTER, incrementCounter)]);
+    yield all([takeLatest(actions.INCREMENT_COUNTER_SAGA, incrementCounter)]);
 }

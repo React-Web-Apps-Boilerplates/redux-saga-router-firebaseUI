@@ -11,7 +11,7 @@ function* saveNewUser(params) {
         yield addUser(userData);
 
         yield put({
-            type: actions.SAVE_NEW_USER_REDUCER,
+            type: actions.SAVE_NEW_USER,
             payload: {
                 success: true,
                 status: "success",
@@ -22,7 +22,7 @@ function* saveNewUser(params) {
         console.log(error);
 
         yield put({
-            type: actions.SAVE_NEW_USER_REDUCER,
+            type: actions.SAVE_NEW_USER,
             payload: {
                 success: false,
                 status: "error",
@@ -34,7 +34,6 @@ function* saveNewUser(params) {
 
 export default function* rootSaga() {
     yield all([
-        takeLatest(actions.SAVE_NEW_USER, saveNewUser),
-        // takeLatest(actions.LOGIN, login),
+        takeLatest(actions.SAVE_NEW_USER_SAGA, saveNewUser),
     ]);
 }

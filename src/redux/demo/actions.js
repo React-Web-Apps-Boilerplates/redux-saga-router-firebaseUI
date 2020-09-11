@@ -1,11 +1,11 @@
 const DOCUMENT = "DEMO_";
 
 const actions = {
+    INCREMENT_COUNTER_SAGA: DOCUMENT + "INCREMENT_COUNTER_SAGA",
     INCREMENT_COUNTER: DOCUMENT + "INCREMENT_COUNTER",
-    INCREMENT_COUNTER_REDUCER: DOCUMENT + "INCREMENT_COUNTER_REDUCER",
 
     incrementCounter: (payload) => ({
-        type: actions.INCREMENT_COUNTER,
+        type: actions.INCREMENT_COUNTER_SAGA,
         payload,
     }),
 };

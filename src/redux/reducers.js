@@ -1,7 +1,7 @@
 import demoReducer from "./demo/reducer"
-import login from "./login/reducer"
+import signIn from "./signIn/reducer"
 
 export default {
     demoReducer,
-    login
+    signIn
 };

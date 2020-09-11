@@ -6,7 +6,7 @@ const initState = {
 
 export default function demoReducer(state = initState, action) {
     switch (action.type) {
-        case demoActions.INCREMENT_COUNTER_REDUCER:
+        case demoActions.INCREMENT_COUNTER:
             return {
                 ...state,
                 counter: state.counter + 1,
