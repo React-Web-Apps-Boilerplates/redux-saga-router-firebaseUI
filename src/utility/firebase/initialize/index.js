@@ -1,5 +1,5 @@
 import { initializeApp, auth, firestore } from "firebase";
-import firebaseConfig from "../../../settings/firebase/apiKeys.json";
+import firebaseConfig from "../../../settings/firebase/firebaseConfig.json";
 
 /* Initialize default App. 
     - Now importing "firebase" in other files will be this initialized default App.
