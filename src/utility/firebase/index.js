@@ -1,7 +1,5 @@
 
 import { addFirebaseListeners } from "./listeners";
-import firebase, { initializeApp, auth } from "firebase";
-import { config as firebaseConfig } from "../../settings/firebase/config";
 
 
 /* Execute Required functions */
