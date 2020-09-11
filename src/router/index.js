@@ -37,7 +37,7 @@ const LoginRoute = ({ component: Component, isLoggedIn, ...rest }) => (
             ) : (
                 <Redirect
                     to={{
-                        pathname: "/",
+                        pathname: "/home",
                         state: { from: props.location },
                     }}
                 />
@@ -52,7 +52,7 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
         <ConnectedRouter history={history}>
             <div>
                 {/* Normal Routes */}
-                <Route exact path={"/lounge"} component={SpinCounter} />
+                <Route exact path={"/"} component={SpinCounter} />
 
                 {/* Login Route */}
                 <LoginRoute
@@ -65,7 +65,7 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
                 {/* Restricted Routes */}
                 <RestrictedRoute
                     exact
-                    path="/"
+                    path="/home"
                     component={App}
                     isLoggedIn={isLoggedIn}
                 />
