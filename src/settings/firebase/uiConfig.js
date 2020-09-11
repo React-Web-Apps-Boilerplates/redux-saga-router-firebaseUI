@@ -11,7 +11,9 @@ export const uiConfig = {
         auth.FacebookAuthProvider.PROVIDER_ID,
         auth.TwitterAuthProvider.PROVIDER_ID,
         auth.GithubAuthProvider.PROVIDER_ID,
-        auth.EmailAuthProvider.PROVIDER_ID,
+        { provider: auth.EmailAuthProvider.PROVIDER_ID,
+            // fullLabel: ""
+        },
         {
             provider: auth.PhoneAuthProvider.PROVIDER_ID,
             recaptchaParameters: {

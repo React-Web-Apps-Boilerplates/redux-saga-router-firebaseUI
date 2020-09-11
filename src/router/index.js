@@ -56,7 +56,6 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
 
                 {/* Login Route */}
                 <LoginRoute
-                    exact
                     path="/login"
                     component={Login}
                     isLoggedIn={isLoggedIn}

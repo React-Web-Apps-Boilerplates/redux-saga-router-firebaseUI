@@ -12,7 +12,8 @@ const signUp = (user) => {
 
 export const handleNewUser = ({ additionalUserInfo, user }) => {
     // Helpers //
-    const isNewUser = () => additionalUserInfo.isNewUser;
+    const isNewUser = () =>
+        user.metadata.creationTime === user.metadata.lastSignInTime;
     // *** //
 
     if (isNewUser()) {
