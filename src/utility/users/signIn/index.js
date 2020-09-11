@@ -12,7 +12,6 @@ const redirectUsingReactRouter = () => {
 /* Callback function for successful sign in
     - Return true to redirect automatically */
 export const signInSuccessWithAuthResult = (authResult) => {
-    console.log("Sign in Success!");
     handleNewUser(authResult);
     redirectUsingReactRouter();
     return false;
@@ -21,4 +20,5 @@ export const signInSuccessWithAuthResult = (authResult) => {
 /* Save the user / required data of user on sign in */
 export const onSignIn = (user) => {
     store.dispatch(signIn(user))
+    console.log("Sign in Success!");
 };

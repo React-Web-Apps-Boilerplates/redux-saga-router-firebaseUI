@@ -15,10 +15,9 @@ firebaseAuth.onAuthStateChanged((user) => {
     const isSignedIn = () => !!user;
     // *** //
 
-    if (isSignedIn) {
+    if (isSignedIn()) {
         onSignIn(user);
     } else {
         onSignOut();
-        console.log("Sign out success");
     }
 });

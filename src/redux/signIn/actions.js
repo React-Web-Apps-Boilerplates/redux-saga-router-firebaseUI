@@ -5,14 +5,19 @@ const actions = {
     SAVE_NEW_USER_SAGA: DOCUMENT + "SAVE_NEW_USER_SAGA",
     SAVE_NEW_USER: DOCUMENT + "SAVE_NEW_USER",
 
+    saveNewUser: (payload) => ({
+        type: actions.SAVE_NEW_USER_SAGA,
+        payload
+    }),
+
     signIn: (payload) => ({
         type: actions.SIGN_IN,
         payload,
     }),
 
-    saveNewUser: (payload) => ({
-        type: actions.SAVE_NEW_USER_SAGA,
-        payload
+    signOut: () => ({
+        type: actions.SIGN_IN,
+        payload: undefined,
     })
 };
 

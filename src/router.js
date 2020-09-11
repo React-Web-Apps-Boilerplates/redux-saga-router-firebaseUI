@@ -5,12 +5,6 @@ import { connect } from "react-redux";
 import SpinCounter from "./containers/SpinCounter";
 import App from "./containers/App";
 import LoginScreen from "./containers/Login";
-import { getCurrentUser } from "./utility/firebase/userFunctions";
-
-const getLoggedInStatus = () => {
-    console.log("CU", getCurrentUser());
-    return !!getCurrentUser();
-};
 
 /* Restricted Route (Forward to login Page) 
     - Uses the prop value: "isLoggedIn" to check
@@ -33,7 +27,7 @@ const RestrictedRoute = ({ component: Component, isLoggedIn, ...rest }) => (
     />
 );
 
-const PublicRoutes = ({ history }) => {
+const PublicRoutes = ({ history, isLoggedIn }) => {
     return (
         <ConnectedRouter history={history}>
             <div>
@@ -46,11 +40,15 @@ const PublicRoutes = ({ history }) => {
                     path="/restrictedRoute"
                     // component={() => import("./containers/SpinCounter")}
                     component={SpinCounter}
-                    isLoggedIn={getLoggedInStatus}
+                    isLoggedIn={isLoggedIn}
                 />
             </div>
         </ConnectedRouter>
     );
 };
 
-export default connect((state) => ({}))(PublicRoutes);
+const mapStateToProps = (state) => ({
+    isLoggedIn: !!(state.signIn && state.signIn.user),
+});
+
+export default connect(mapStateToProps)(PublicRoutes);
