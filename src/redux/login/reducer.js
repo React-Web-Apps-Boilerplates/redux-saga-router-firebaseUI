@@ -1,4 +1,4 @@
-import demoActions from "./actions";
+import loginActions from "./actions";
 
 const initState = {
     counter: 0,
@@ -6,10 +6,10 @@ const initState = {
 
 export default function demoReducer(state = initState, action) {
     switch (action.type) {
-        case demoActions.INCREMENT_COUNTER_REDUCER:
+        case loginActions.SAVE_NEW_USER_REDUCER:
             return {
                 ...state,
-                counter: state.counter + 1,
+                newUser: action.payload,
             };
         default:
             return state;

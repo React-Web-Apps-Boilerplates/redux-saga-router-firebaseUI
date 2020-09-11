@@ -1,20 +1,21 @@
 import { all, takeLatest, put } from "redux-saga/effects";
 
 import actions from "./actions";
+import { addUser } from "../../utility/firebase/dbCalls";
 
-
+// Save a new user to database
 function* saveNewUser(params) {
     try {
-        let { payload } = params.payload;
+        let { userData } = params.payload;
 
-        // Perform API Call -> Put data to reducer
+        yield addUser(userData);
 
         yield put({
             type: actions.SAVE_NEW_USER_REDUCER,
             payload: {
                 success: true,
                 status: "success",
-                message: "New user created"
+                message: "New user created",
             },
         });
     } catch (error) {
@@ -25,12 +26,15 @@ function* saveNewUser(params) {
             payload: {
                 success: false,
                 status: "error",
-                message: "Failed to create new user"
+                message: "Failed to create new user",
             },
         });
     }
 }
 
 export default function* rootSaga() {
-    yield all([takeLatest(actions.SAVE_NEW_USER, saveNewUser), takeLatest(actions.LOGIN, login)]);
+    yield all([
+        takeLatest(actions.SAVE_NEW_USER, saveNewUser),
+        // takeLatest(actions.LOGIN, login),
+    ]);
 }

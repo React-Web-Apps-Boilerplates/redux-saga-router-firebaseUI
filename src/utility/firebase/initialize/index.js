@@ -9,4 +9,4 @@ initializeApp(firebaseConfig)
 
 /* Functions immediately dependent on initialization */
 export const firebaseAuth = auth();
-// export const database = firestore();
+export const database = firestore();
