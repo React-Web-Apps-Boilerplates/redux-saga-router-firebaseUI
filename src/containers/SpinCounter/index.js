@@ -15,6 +15,9 @@ class SpinCounter extends Component {
     }
 
     componentDidUpdate = (prevProps, prevState) => {
+        if(this.props.count === 3) {
+            history.push("/login")
+        }
     };
 
     onLogoClick = () => {
