@@ -3,7 +3,7 @@ import signInActions from "../../../redux/signIn/actions";
 
 const { saveNewUser } = signInActions;
 
-const shapeUserData = (user) => ({ id: user.uid });
+const shapeUserData = (user) => ({ id: user.uid, photoURL: user.photoURL });
 
 const signUp = (user) => {
     let userData = shapeUserData(user);
@@ -11,6 +11,7 @@ const signUp = (user) => {
 };
 
 export const handleNewUser = ({ additionalUserInfo, user }) => {
+    debugger;
     // Helpers //
     const isNewUser = () =>
         user.metadata.creationTime === user.metadata.lastSignInTime;
