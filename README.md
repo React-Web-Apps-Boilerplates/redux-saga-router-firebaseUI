@@ -6,6 +6,8 @@ Boiler plate for a CRA project with following packages configured:
   - firebase
   - firebaseUI
 
-react-firebaseui to handle the authentication of users
+react-firebaseui to handle the signIn, signUp, authentication.
+
 
 tutorial: https://www.youtube.com/watch?v=zq0TuNqV0Ew
+
