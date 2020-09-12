@@ -52,14 +52,13 @@ const PublicRoutes = ({ history, isLoggedIn }) => {
             <div>
                 {/* Normal Routes */}
                 <Route exact path={"/"} component={SpinCounter} />
-                <Route  path={"/login"} component={Login} />
 
                 {/* Login Route */}
-                {/* <LoginRoute
+                <LoginRoute
                     path="/login"
                     component={Login}
                     isLoggedIn={isLoggedIn}
-                /> */}
+                />
 
                 {/* Restricted Routes */}
                 <RestrictedRoute

@@ -18,7 +18,7 @@ export const uiConfig = {
             provider: auth.PhoneAuthProvider.PROVIDER_ID,
             recaptchaParameters: {
                 type: "image", // 'image or audio'
-                size: "normal", // 'normal or invisible' or 'compact'
+                size: "invisible", // 'normal or invisible' or 'compact'
                 badge: "bottomleft", // 'bottomLeft' or 'bottomright' or 'inline' applies to invisible.
             },
             defaultCountry: "IN",
