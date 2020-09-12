@@ -11,7 +11,6 @@ const signUp = (user) => {
 };
 
 export const handleNewUser = ({ additionalUserInfo, user }) => {
-    debugger;
     // Helpers //
     const isNewUser = () =>
         user.metadata.creationTime === user.metadata.lastSignInTime;
