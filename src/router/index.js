@@ -47,19 +47,19 @@ const LoginRoute = ({ component: Component, isLoggedIn, ...rest }) => (
 );
 
 const PublicRoutes = ({ history, isLoggedIn }) => {
-    console.log("Router. history", history, "isLoggedIn", isLoggedIn);
     return (
         <ConnectedRouter history={history}>
             <div>
                 {/* Normal Routes */}
                 <Route exact path={"/"} component={SpinCounter} />
+                <Route  path={"/login"} component={Login} />
 
                 {/* Login Route */}
-                <LoginRoute
+                {/* <LoginRoute
                     path="/login"
                     component={Login}
                     isLoggedIn={isLoggedIn}
-                />
+                /> */}
 
                 {/* Restricted Routes */}
                 <RestrictedRoute
