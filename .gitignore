@@ -106,5 +106,3 @@ dist
 # production
 /build
 
-#apiKeys
-src/settings/firebase/firebaseConfig.json
