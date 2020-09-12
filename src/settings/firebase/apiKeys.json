@@ -1,4 +1,10 @@
 {
-    "apiKey": "AIzaSyDLoqcbTDMFuurtAyDgVEKZ6qwo0j0Osjk",
-    "authDomain": "fir-auth-tutorial-ed11f.firebaseapp.com"
+    "apiKey": "YOUR_KEY",
+    "authDomain": "",
+    "databaseURL": "",
+    "projectId": "",
+    "storageBucket": "",
+    "messagingSenderId": "",
+    "appId": "",
+    "measurementId": ""
 }
