@@ -47,7 +47,6 @@ const LoginRoute = ({ component: Component, isLoggedIn, ...rest }) => (
 );
 
 const PublicRoutes = ({ history, isLoggedIn }) => {
-    console.log("Router. history", history, "isLoggedIn", isLoggedIn);
     return (
         <ConnectedRouter history={history}>
             <div>
